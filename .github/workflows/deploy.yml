@@ -1,0 +1,33 @@
+name: Build and deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+env:
+  API_KEY: API_KEY
+  AUTH_DOMAIN: AUTH_DOMAIN
+  DATABASE_URL: DATABASE_URL
+  PROJECTID: PROJECTID
+  STORAGEBUCKET: STORAGEBUCKET
+  MESSAGINGSENDERID: MESSAGINGSENDERID
+  APPID: APPID
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Install and Build 🔧
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          branch: gh-pages
+          folder: dist
