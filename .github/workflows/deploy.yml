@@ -4,15 +4,6 @@ on:
   push:
     branches: [main]
 
-env:
-  API_KEY: API_KEY
-  AUTH_DOMAIN: AUTH_DOMAIN
-  DATABASE_URL: DATABASE_URL
-  PROJECTID: PROJECTID
-  STORAGEBUCKET: STORAGEBUCKET
-  MESSAGINGSENDERID: MESSAGINGSENDERID
-  APPID: APPID
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
