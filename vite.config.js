@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [includeHtml()],
   root: 'src', // Вказуємо, що кореневою директорією є 'src'
   build: {
+    root: 'src',
     outDir: '../dist', // Вказуємо вихідну папку для збірки (поза 'src')
   },
   css: {
@@ -14,5 +15,5 @@ export default defineConfig({
       },
     },
   },
-  base: 'cyberpunk',
+  base: '/cyberpunk',
 });
