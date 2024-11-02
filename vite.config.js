@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [includeHtml()],
-  // root: 'src', // Вказуємо, що кореневою директорією є 'src'
+  root: 'src', // Вказуємо, що кореневою директорією є 'src'
   build: {
     outDir: '../dist', // Вказуємо вихідну папку для збірки (поза 'src')
   },
@@ -14,6 +14,6 @@ export default defineConfig({
       },
     },
   },
-  base: '/cyberpunk',
+
   //
 });
